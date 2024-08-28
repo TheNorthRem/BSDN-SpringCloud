@@ -1,0 +1,12 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: bn-logger
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:  jdbc:mysql:aws://localhost:3306
+    username:  root
+    password:  137100
+
+
