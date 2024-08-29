@@ -7,6 +7,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url:  jdbc:mysql:aws://localhost:3306
     username:  root
-    password:  137100
+    password:  1371002466
 
 
