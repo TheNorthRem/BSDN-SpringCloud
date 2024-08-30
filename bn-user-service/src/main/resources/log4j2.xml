@@ -15,10 +15,12 @@
         </Kafka>
     </Appenders>
     <Loggers>
-
+        <logger name="test_logger" level="info" additivity="false">
+            <AppenderRef ref="KAFKA-LOGGER"/>
+        </logger>
         <!-- Root表示所有Logger用Root中的Appender打印日志  -->
         <Root level="info">
-            <AppenderRef ref="KAFKA-LOGGER"/>
+            <AppenderRef ref="STDOUT"/>
         </Root>
     </Loggers>
 </Configuration>
