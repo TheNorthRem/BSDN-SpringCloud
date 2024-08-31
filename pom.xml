@@ -11,6 +11,7 @@
     <modules>
         <module>bn-user-service</module>
         <module>bn-logger-service</module>
+        <module>bn-common-app</module>
     </modules>
 
     <parent>
@@ -80,11 +81,6 @@
                 <version>${kafka.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>net.logstash.log4j</groupId>
-                <artifactId>jsonevent-layout</artifactId>
-                <version>${log4j.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>

@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="warn">
     <Properties>
+        <property name="DEFAULT_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS}  %highlight{%-5level} %style{%5pid}{bright,magenta} --- [%t] %cyan{%c{1.} [%L]} : %m%n</property>
     </Properties>
     <Appenders>
-        <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d %p %c{1.} %t %m%n"/>
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--输出日志的格式-->
+            <PatternLayout pattern="${DEFAULT_PATTERN}" />
         </Console>
         <Kafka name="KAFKA-LOGGER" topic="bn-topic-logger"><!--kafka topic-->
-            <JsonLayout/> <!--JsonLayout：日志格式为json,方便在Elastic中处理-->
+            <JsonLayout compact="true" includeTimeMillis="true">
+                <KeyValuePair key="time" value="${date:yyyy-MM-dd'T'HH:mm:ss.SSS}"/>
+                <KeyValuePair key="machine" value="${sys:appName}"/>
+                <KeyValuePair key="ip" value="${sys:ip}"/>
+                <KeyValuePair key="hostName" value="${sys:hostName}" />
+            </JsonLayout>
             <Property name="bootstrap.servers">localhost:9092</Property><!--kafka server的ip:port-->
             <Property name ="retries" >3</Property>
             <Property name ="linger.ms" >1000</Property>
@@ -20,7 +27,7 @@
         </logger>
         <!-- Root表示所有Logger用Root中的Appender打印日志  -->
         <Root level="info">
-            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
 </Configuration>
