@@ -11,7 +11,7 @@
         <Kafka name="KAFKA-LOGGER" topic="bn-topic-logger"><!--kafka topic-->
             <JsonLayout compact="true" includeTimeMillis="true">
                 <KeyValuePair key="time" value="${date:yyyy-MM-dd'T'HH:mm:ss.SSS}"/>
-                <KeyValuePair key="machine" value="${sys:appName}"/>
+                <KeyValuePair key="appName" value="${sys:appName}"/>
                 <KeyValuePair key="ip" value="${sys:ip}"/>
                 <KeyValuePair key="hostName" value="${sys:hostName}" />
             </JsonLayout>
