@@ -1,6 +1,5 @@
-package com.bupt.bnlogger.service.kafka.impl;
+package com.bupt.bnlogger.kafka;
 
-import com.bupt.bnlogger.service.kafka.LoggerConsumerService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -15,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class LoggerConsumerServiceImpl implements LoggerConsumerService {
+public class Consumer {
     @KafkaListener(topics = "logger", groupId = "consumer")
     public void logListen(@NonNull ConsumerRecord<String, String> record) {
         log.info("has received:{}", record.value());
