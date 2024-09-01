@@ -14,8 +14,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class Consumer {
-    @KafkaListener(topics = "logger", groupId = "consumer")
+public class LoggerConsumer {
+    @KafkaListener(topics = "bn-topic-user", groupId = "consumer")
     public void logListen(@NonNull ConsumerRecord<String, String> record) {
         log.info("has received:{}", record.value());
     }
