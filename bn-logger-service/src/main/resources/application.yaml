@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: bn-logger
-
+  kafka:
+    bootstrap-servers: localhost:9092
 
 

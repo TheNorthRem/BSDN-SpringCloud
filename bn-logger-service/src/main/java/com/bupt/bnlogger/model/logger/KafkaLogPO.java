@@ -5,27 +5,18 @@ import lombok.Data;
 import java.sql.Timestamp;
 
 /**
- * @Description: 日志消息内容
+ * @Description: Kafka消息持久化
+ * @author: Jungle
+ * @date: 2024年09月01日 21:02
  */
-@Data
-public class KafkaLogBO {
-    private Long timeMillis;
 
-    private String thread;
+@Data
+public class KafkaLogPO {
+    private Long timeMillis;
 
     private String level;
 
-    private String loggerName;
-
     private String message;
-
-    private Boolean endOfBatch;
-
-    private String loggerFqcn;
-
-    private Long threadId;
-
-    private Integer threadPriority;
 
     private Timestamp time;
 
