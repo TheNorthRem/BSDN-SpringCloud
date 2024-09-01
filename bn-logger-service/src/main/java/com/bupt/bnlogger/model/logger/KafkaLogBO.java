@@ -1,4 +1,4 @@
-package com.bupt.bnlogger.entity;
+package com.bupt.bnlogger.model.logger;
 
 import lombok.Data;
 
@@ -8,8 +8,8 @@ import java.sql.Timestamp;
  * @Description: 日志消息内容
  */
 @Data
-public class KafkaLog {
-    private Long timeWillis;
+public class KafkaLogBO {
+    private Long timeMillis;
 
     private String thread;
 
@@ -21,13 +21,13 @@ public class KafkaLog {
 
     private Boolean endOfBatch;
 
-    private String loggerFocn;
+    private String loggerFqcn;
 
     private Long threadId;
 
     private Integer threadPriority;
 
-    private Timestamp timestamp;
+    private Timestamp time;
 
     private String appName;
 

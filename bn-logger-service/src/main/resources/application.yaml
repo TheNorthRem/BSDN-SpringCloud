@@ -3,10 +3,7 @@ server:
 spring:
   application:
     name: bn-logger
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url:  jdbc:mysql:aws://localhost:3306
-    username:  root
-    password:  1371002466
+  kafka:
+    bootstrap-servers: localhost:9092
 
 
