@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @TableName("bn-user")
 public class BnUserPO {
 
-    private Integer bnUserId;
+    private Long bnUserId;
 
     private String username;
 
@@ -30,5 +30,7 @@ public class BnUserPO {
     private LocalDateTime updateTime;
 
     private Integer status;
+
+    private String nickName;
 
 }
