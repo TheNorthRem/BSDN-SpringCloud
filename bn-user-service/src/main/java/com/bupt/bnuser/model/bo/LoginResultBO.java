@@ -1,4 +1,4 @@
-package com.bupt.bnuser.model.dto;
+package com.bupt.bnuser.model.bo;
 
 import lombok.Builder;
 import lombok.Data;
@@ -10,9 +10,8 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class LoginResultDTO {
+public class LoginResultBO {
     private Long userId;
-    private String token;
     private String username;
     private String nickName;
 }
