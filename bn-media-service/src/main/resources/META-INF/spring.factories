@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.bupt.bncommon.initializer.LoggerInitializer\
+  ,com.bupt.bncommon.handler.GlobalControllerExceptionHandler

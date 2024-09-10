@@ -1,0 +1,12 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: bn-media
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:  jdbc:mysql:aws://localhost:3306?useSSL=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username:  root
+    password:  137100
+
+

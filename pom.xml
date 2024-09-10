@@ -12,6 +12,7 @@
         <module>bn-user-service</module>
         <module>bn-logger-service</module>
         <module>bn-common-app</module>
+        <module>bn-media-service</module>
     </modules>
 
     <parent>
