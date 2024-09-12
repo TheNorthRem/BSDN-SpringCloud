@@ -1,6 +1,8 @@
 package com.bupt.bnlogger.model.logger;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.sql.Timestamp;
 
@@ -11,7 +13,11 @@ import java.sql.Timestamp;
  */
 
 @Data
+@Document(indexName = "kafka_logs")
 public class KafkaLogPO {
+    @Id
+    private String uniqueId;
+
     private Long timeMillis;
 
     private String level;
@@ -25,4 +31,8 @@ public class KafkaLogPO {
     private String ip;
 
     private String hostName;
+
+    public void makeUniqueId() {
+        uniqueId = String.format("%s %s %s", appName, ip, hostName);
+    }
 }
